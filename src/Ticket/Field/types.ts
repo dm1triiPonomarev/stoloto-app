@@ -1,5 +1,9 @@
 import { ReactNode } from "react";
 
+export interface ITicketProps {
+  ticketNumber: number;
+}
+
 export interface IFieldProps {
   title: string;
   subTitle: string;
@@ -8,4 +12,6 @@ export interface IFieldProps {
 
 export interface IFieldItemProps {
   number: number;
+  fieldNumber: "firstField" | "secondField";
+  disabled: boolean;
 }

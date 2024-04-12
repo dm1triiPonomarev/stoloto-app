@@ -1,9 +1,11 @@
-import React from "react";
 import { styled } from "styled-components";
 import { IButtonProps } from ".";
+import { useAppSelector } from "../../store/hooks";
+import { checkWinner } from "../../utils/random";
 
 const Button = ({ title }: IButtonProps) => {
-  return <MyButton>{title}</MyButton>;
+  const store = useAppSelector((store) => store.ticket);
+  return <MyButton onClick={() => checkWinner(store)}>{title}</MyButton>;
 };
 
 const MyButton = styled.button`
