@@ -1,4 +1,3 @@
-import React from "react";
 import { IFieldProps } from "./types";
 import { styled } from "styled-components";
 

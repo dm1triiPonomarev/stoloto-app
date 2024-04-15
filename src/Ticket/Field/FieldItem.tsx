@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { styled } from "styled-components";
 import { IFieldItemProps } from "./types";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";

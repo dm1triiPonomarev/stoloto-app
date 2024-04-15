@@ -1,4 +1,3 @@
-import React from "react";
 import { styled } from "styled-components";
 import generateSrc from "../assets/magic-wand.svg";
 import Button from "../UI/Button/Button";

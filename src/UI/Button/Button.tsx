@@ -1,8 +1,5 @@
 import { styled } from "styled-components";
 import { IButtonProps } from ".";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { checkWinner } from "../../utils/random";
-import { winTheGame } from "../../store/TicketSlice";
 
 const Button = ({ title, fn, disabled = false }: IButtonProps) => {
   return (

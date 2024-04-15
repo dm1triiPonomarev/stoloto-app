@@ -26,7 +26,7 @@ export const TicketSlice = createSlice({
       state.isTicketWon = false;
     },
     clearTicket: () => initialState,
-    setRandomTicketValue: (state, action: PayloadAction<IStore>) =>
+    setRandomTicketValue: (_state, action: PayloadAction<IStore>) =>
       action.payload,
   },
 });

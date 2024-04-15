@@ -1,4 +1,3 @@
-import { useAppSelector } from "../store/hooks";
 import { IStore } from "../store/types";
 
 function getRandomIntInclusive(min: number, max: number) {
