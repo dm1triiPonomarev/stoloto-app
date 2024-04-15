@@ -5,5 +5,5 @@ export interface IPayloadProps {
 export interface IStore {
   firstField: number[];
   secondField: number[];
-  isTicketWon: boolean;
+  isTicketWon: boolean | undefined;
 }

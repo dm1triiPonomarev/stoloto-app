@@ -4,7 +4,7 @@ import { IPayloadProps, IStore } from "./types";
 const initialState: IStore = {
   firstField: [] as number[],
   secondField: [] as number[],
-  isTicketWon: false,
+  isTicketWon: undefined,
 };
 
 export const TicketSlice = createSlice({
@@ -22,11 +22,22 @@ export const TicketSlice = createSlice({
     winTheGame: (state) => {
       state.isTicketWon = true;
     },
+    loseTheGame: (state) => {
+      state.isTicketWon = false;
+    },
     clearTicket: () => initialState,
+    setRandomTicketValue: (state, action: PayloadAction<IStore>) =>
+      action.payload,
   },
 });
 
-export const { pushNumber, removeNumber, winTheGame, clearTicket } =
-  TicketSlice.actions;
+export const {
+  pushNumber,
+  removeNumber,
+  winTheGame,
+  clearTicket,
+  loseTheGame,
+  setRandomTicketValue,
+} = TicketSlice.actions;
 
 export default TicketSlice.reducer;

@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
 import { IFieldItemProps } from "./types";
-import { useAppDispatch } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { pushNumber, removeNumber } from "../../store/TicketSlice";
 
 const FieldItem = ({ number, fieldNumber, disabled }: IFieldItemProps) => {
-  const [isActive, setIsActive] = useState(false);
+  const store = useAppSelector((state) => state.ticket);
   const dispatch = useAppDispatch();
-  if (isActive)
+  if (store[fieldNumber].indexOf(number) >= 0)
     return (
       <FieldItemWrapperActive
         onClick={() => {
-          setIsActive(false);
           dispatch(removeNumber({ number, fieldNumber }));
         }}
       >
@@ -22,7 +21,6 @@ const FieldItem = ({ number, fieldNumber, disabled }: IFieldItemProps) => {
   return (
     <FieldItemWrapper
       onClick={() => {
-        setIsActive(true);
         dispatch(pushNumber({ number, fieldNumber }));
       }}
       disabled={disabled}
